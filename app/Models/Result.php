@@ -11,4 +11,9 @@ class Result extends Model
 
     protected  $fillable = ['server_id', 'server_name', 'scrim_name', 'date_played'];
 
+    public function scores()
+    {
+        return $this->hasMany('App\Models\Score');
+    }
+
 }

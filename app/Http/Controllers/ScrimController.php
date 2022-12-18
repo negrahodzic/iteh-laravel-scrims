@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ScrimCollection;
+use App\Http\Resources\ScrimResource;
 use App\Models\Scrim;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ScrimController extends Controller
 {
@@ -14,7 +17,7 @@ class ScrimController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(new ScrimCollection(Scrim::all()), Response::HTTP_OK);
     }
 
     /**
@@ -36,7 +39,7 @@ class ScrimController extends Controller
      */
     public function show(Scrim $scrim)
     {
-        //
+        return new ScrimResource($scrim);
     }
 
     /**

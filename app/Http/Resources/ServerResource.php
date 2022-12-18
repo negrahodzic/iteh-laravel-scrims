@@ -14,6 +14,10 @@ class ServerResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'server_id' => $this->server_id,
+            'enabled_bot' => $this->enabled_bot,
+            'scrims' => new ScrimCollection($this::find($this->id)->scrims),
+        ];
     }
 }

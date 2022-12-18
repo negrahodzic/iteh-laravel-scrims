@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ScoreCollection;
+use App\Http\Resources\ScoreResource;
 use App\Models\Score;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ScoreController extends Controller
 {
@@ -14,7 +17,7 @@ class ScoreController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(new ScoreCollection(Score::all()), Response::HTTP_OK);
     }
 
     /**
@@ -36,7 +39,8 @@ class ScoreController extends Controller
      */
     public function show(Score $score)
     {
-        //
+        return new ScoreResource($score);
+
     }
 
     /**

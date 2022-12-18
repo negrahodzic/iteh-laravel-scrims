@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Scrim extends Model
 {
     use HasFactory;
+
+    public function slots()
+    {
+        return $this->hasMany('App\Models\Slot');
+    }
 }

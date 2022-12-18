@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use App\Models\Score;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\ScoreCollection;
+use Illuminate\Support\Facades\DB;
 
 class ResultResource extends JsonResource
 {
@@ -21,12 +23,8 @@ class ResultResource extends JsonResource
             'server_name' => $this->server_name,
             'scrim_name' => $this->scrim_name,
             'date_played' => $this->date_played,
-            'scores' => new ScoreCollection(Score::query()->where('result_id', $this->id)),
+            'scores' => new ScoreCollection($this::find($this->id)->scores),
         ];
 
-//        $table->string('server_id');
-//        $table->string('server_name');
-//        $table->string('scrim_name');
-//        $table->date('date_played');
     }
 }

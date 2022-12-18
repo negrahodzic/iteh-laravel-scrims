@@ -19,3 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/results', \App\Http\Controllers\ResultController::class);
+Route::apiResource('/scores', \App\Http\Controllers\ScoreController::class);
+Route::apiResource('/servers', \App\Http\Controllers\ServerController::class);
+Route::apiResource('/scrims', \App\Http\Controllers\ScrimController::class);

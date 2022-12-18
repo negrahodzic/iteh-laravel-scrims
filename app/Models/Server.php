@@ -9,4 +9,8 @@ class Server extends Model
 {
     use HasFactory;
 
+    public function scrims()
+    {
+        return $this->hasMany('App\Models\Scrim');
+    }
 }
