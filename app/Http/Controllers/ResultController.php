@@ -24,11 +24,15 @@ class ResultController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
-        //
+        $result = Result::create($request->only([
+            'server_id', 'server_name', 'scrim_name', 'date_played'
+        ]));
+
+        return new ResultResource($result);
     }
 
     /**
@@ -51,7 +55,11 @@ class ResultController extends Controller
      */
     public function update(Request $request, Result $result)
     {
-        //
+        $result->update($request->only([
+            'server_id', 'server_name', 'scrim_name', 'date_played'
+        ]));
+
+        return new ResultResource($result);
     }
 
     /**
@@ -62,6 +70,11 @@ class ResultController extends Controller
      */
     public function destroy(Result $result)
     {
-        //
+        $result->delete();
+
+        return response([
+            'message' => 'Successfully deleted.',
+            'status' => Response::HTTP_NO_CONTENT
+        ]);
     }
 }
