@@ -28,7 +28,11 @@ class ServerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $server = Server::create($request->only([
+            'server_id', 'enabled_bot', 'role_admin_id', 'role_results_id', 'channel_logs_id'
+        ]));
+
+        return new ServerResource($server);
     }
 
     /**
@@ -51,7 +55,11 @@ class ServerController extends Controller
      */
     public function update(Request $request, Server $server)
     {
-        //
+        $server->update($request->only([
+            'server_id', 'enabled_bot', 'role_admin_id', 'role_results_id', 'channel_logs_id'
+        ]));
+
+        return new ServerResource($server);
     }
 
     /**
@@ -62,6 +70,11 @@ class ServerController extends Controller
      */
     public function destroy(Server $server)
     {
-        //
+        $server->delete();
+
+        return response([
+            'message' => 'Successfully deleted.',
+            'status' => Response::HTTP_NO_CONTENT
+        ]);
     }
 }

@@ -39,7 +39,7 @@ class ResultController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Result  $result
-     * @return \Illuminate\Http\Response
+     * @return ResultResource
      */
     public function show(Result $result)
     {

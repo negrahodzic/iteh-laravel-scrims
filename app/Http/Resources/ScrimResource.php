@@ -15,7 +15,7 @@ class ScrimResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'enabled_scrim' => $this->enabled_scrim,
+            'is_enabled_scrim' => $this->is_enabled_scrim,
             'scrim_name' => $this->scrim_name,
             'number_of_teams' => $this->number_of_teams,
             'max_number_of_teams' => $this->max_number_of_teams,
