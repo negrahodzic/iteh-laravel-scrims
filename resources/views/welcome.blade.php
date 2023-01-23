@@ -58,49 +58,49 @@
                                 <th scope="row">1</th>
                                 <td>GET</td>
                                 <td>/</td>
-                                <td>-</td>
+                                <td>Information about availabe routes</td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>POST</td>
                                 <td>/api/register</td>
-                                <td>-</td>
+                                <td>Registers user</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>POST</td>
                                 <td>/api/login</td>
-                                <td>-</td>
+                                <td>Logins user</td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
                                 <td>POST</td>
                                 <td>/api/logout</td>
-                                <td>-</td>
+                                <td>Logouts user</td>
                             </tr>
                             <tr>
                                 <th scope="row">5</th>
                                 <td>GET,POST</td>
                                 <td>/api/servers</td>
-                                <td>-</td>
+                                <td>Returns list of all servers (requires auth)</td>
                             </tr>
                             <tr>
                                 <th scope="row">6</th>
                                 <td>GET,POST,PUT,DELETE</td>
                                 <td>/api/servers/{1}</td>
-                                <td>-</td>
+                                <td>Returns server by ID  (requires auth)</td>
                             </tr>
                             <tr>
                                 <th scope="row">7</th>
                                 <td>GET,POST</td>
                                 <td>/api/results</td>
-                                <td>-</td>
+                                <td>Returns list of all results</td>
                             </tr>
                             <tr>
                                 <th scope="row">8</th>
                                 <td>GET,POST,PUT,DELETE</td>
                                 <td>/api/results/{1}</td>
-                                <td>-</td>
+                                <td>Returns result by ID</td>
                             </tr>
                             </tbody>
                         </table>
